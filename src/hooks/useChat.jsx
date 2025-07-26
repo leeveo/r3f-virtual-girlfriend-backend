@@ -4,7 +4,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 const rawBackendUrl = import.meta.env.VITE_API_URL || (
   window.location.hostname === "localhost"
     ? "http://localhost:8080"
-    : "https://4cce-172-189-56-91.ngrok-free.app"
+    : "https://0432d361a5af.ngrok-free.app"  // ⚠️ Utilisez la bonne URL ngrok
 );
 const backendUrl = rawBackendUrl.replace(/\/+$/, ""); // 🔧 Supprime les `/` finaux
 
@@ -56,13 +56,15 @@ export const ChatProvider = ({ children }) => {
       if (!currentSessionId) {
         currentSessionId = await createSession();
         if (!currentSessionId) {
-          console.error('❌ Cannot create session, continuing without session tracking');
+          console.warn('⚠️ Cannot create session, continuing without session tracking');
         }
       }
 
       // Préparer le body de la requête
       const requestBody = { message };
-      if (currentSessionId) {
+      
+      // ⚠️ N'ajouter sessionId que si la création a réussi
+      if (currentSessionId && !currentSessionId.startsWith('temp-')) {
         requestBody.sessionId = currentSessionId;
       }
 
