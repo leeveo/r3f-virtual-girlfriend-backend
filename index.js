@@ -55,19 +55,21 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // CORS
-// CORS - remplacement complet
 app.use(cors({
   origin: [
-    "https://neemba-frontend.vercel.app"
+    "https://neemba-frontend.vercel.app",
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "http://localhost:5174"
   ],
   methods: ["GET", "POST", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"]
+  allowedHeaders: ["Content-Type", "Authorization", "ngrok-skip-browser-warning"],
+  credentials: true
 }));
-
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, ngrok-skip-browser-warning");
   res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
   next();
 });

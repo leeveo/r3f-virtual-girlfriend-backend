@@ -4,7 +4,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 const rawBackendUrl = import.meta.env.VITE_API_URL || (
   window.location.hostname === "localhost"
     ? "http://localhost:8080"
-    : "https://0432d361a5af.ngrok-free.app"  // ⚠️ Utilisez la bonne URL ngrok
+    : "https://a18d6cee70c1.ngrok-free.app"  // ⚠️ Nouvelle URL ngrok
 );
 const backendUrl = rawBackendUrl.replace(/\/+$/, ""); // 🔧 Supprime les `/` finaux
 
