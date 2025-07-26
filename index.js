@@ -158,16 +158,17 @@ app.get("/session/:sessionId", async (req, res) => {
 app.post("/chat", async (req, res) => {
   try {
     const userMessage = req.body.message;
-    const sessionId = req.body.sessionId; // Récupérer l'ID de session
+    const sessionId = req.body.sessionId; // Optionnel maintenant
     const engine = req.body.engine || "azure";
     
     if (!userMessage) return res.status(400).json({ error: "Missing message." });
-    if (!sessionId) return res.status(400).json({ error: "Missing sessionId." });
 
-    // Vérifier que la session existe
-    const sessionCheck = await pool.query('SELECT id FROM user_sessions WHERE session_id = $1', [sessionId]);
-    if (sessionCheck.rows.length === 0) {
-      return res.status(404).json({ error: "Session not found." });
+    // Vérifier que la session existe seulement si sessionId est fourni
+    if (sessionId) {
+      const sessionCheck = await pool.query('SELECT id FROM user_sessions WHERE session_id = $1', [sessionId]);
+      if (sessionCheck.rows.length === 0) {
+        console.warn(`⚠️ Session ${sessionId} not found, continuing without session tracking`);
+      }
     }
 
     const { messages } = await answerWithRAG(userMessage);
