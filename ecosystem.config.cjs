@@ -1,0 +1,13 @@
+module.exports = {
+  apps: [
+    {
+      name: "r3f-backend",
+      script: "./index.js",
+      interpreter: "node",
+   env: {
+        NODE_ENV: "production",
+        PORT: 3000
+      }
+    }
+  ]
+};

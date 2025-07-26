@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "soundFile": "D:\\NEXTJS-AI-AVATAR\\r3f-virtual-girlfriend-backend\\audios\\message_1743693694136_0.wav",
+    "duration": 2.74
+  },
+  "mouthCues": [
+    { "start": 0.00, "end": 0.03, "value": "A" },
+    { "start": 0.03, "end": 0.34, "value": "B" },
+    { "start": 0.34, "end": 0.41, "value": "E" },
+    { "start": 0.41, "end": 0.49, "value": "A" },
+    { "start": 0.49, "end": 0.95, "value": "B" },
+    { "start": 0.95, "end": 0.97, "value": "C" },
+    { "start": 0.97, "end": 1.03, "value": "A" },
+    { "start": 1.03, "end": 1.09, "value": "D" },
+    { "start": 1.09, "end": 1.15, "value": "A" },
+    { "start": 1.15, "end": 1.54, "value": "F" },
+    { "start": 1.54, "end": 1.82, "value": "B" },
+    { "start": 1.82, "end": 2.03, "value": "F" },
+    { "start": 2.03, "end": 2.45, "value": "B" },
+    { "start": 2.45, "end": 2.74, "value": "X" }
+  ]
+}
