@@ -11,9 +11,10 @@
   "author": "leevea <contact@leevea.fr>",
   "dependencies": {
     "@deepgram/sdk": "^3.12.1",
+    "chokidar": "^4.0.3",
     "cors": "^2.8.5",
     "cross-fetch": "^4.1.0",
-    "dotenv": "^16.5.0",
+    "dotenv": "^16.4.7",
     "elevenlabs": "^1.56.0",
     "elevenlabs-node": "^1.2.0",
     "express": "^4.21.2",
@@ -22,14 +23,10 @@
     "microsoft-cognitiveservices-speech-sdk": "^1.43.1",
     "node-fetch": "^3.3.2",
     "openai": "^4.91.1",
-    "pg": "^8.16.3",
     "play-sound": "^1.1.6",
-    "uuid": "^11.1.0",
-    "weaviate-ts-client": "^1.6.0",
     "ws": "^8.18.1"
   },
   "devDependencies": {
-    "@types/pg": "^8.15.4",
     "ffmpeg-static": "^5.2.0",
     "nodemon": "^3.0.1"
   },
