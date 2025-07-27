@@ -6,7 +6,11 @@ module.exports = {
     script: './service-worker/',
     watch: ['./service-worker']
   }],
-
+{
+      name: "ngrok",
+      script: "ngrok-service.js",
+      watch: false
+    }
   deploy : {
     production : {
       user : 'SSH_USERNAME',
